@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#f5f7ff">
+<title>Урок 2 — Медицина и здоровье | Emille Türkçe Konuşma Kulübü</title>
+<style>
+:root{--ink:#18233b;--muted:#78839a;--blue:#536de8;--blue-dark:#4057ce;--paper:#fff;--bg:#f5f7ff}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;padding:22px 15px 34px;background:radial-gradient(circle at 8% 0%,#e5eaff 0,transparent 34%),radial-gradient(circle at 95% 35%,#e3f7f1 0,transparent 28%),var(--bg);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink)}
+.app{max-width:720px;margin:0 auto}.topline{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:0 3px 15px}
+.brand{font-size:12px;letter-spacing:1.5px;text-transform:uppercase;font-weight:850;color:#6574c8}.clubmark{font-size:12px;color:#7b879d;font-weight:700}
+.hero{position:relative;overflow:hidden;border-radius:27px;padding:27px 27px 25px;color:#fff;background:linear-gradient(125deg,#3548b6 0%,#6379ef 62%,#7e8cf5 100%);box-shadow:0 18px 42px #4b60cf30}
+.hero:before,.hero:after{content:"";position:absolute;border:1px solid #ffffff22;border-radius:50%;pointer-events:none}.hero:before{width:240px;height:240px;right:-80px;top:-145px}.hero:after{width:170px;height:170px;right:-42px;top:-110px}
+.lesson{display:inline-flex;align-items:center;gap:7px;padding:7px 11px;border:1px solid #ffffff40;background:#ffffff18;border-radius:30px;font-size:11px;font-weight:850;letter-spacing:.8px}
+.hero h1{font-size:clamp(27px,5.5vw,38px);line-height:1.12;margin:15px 0 10px;max-width:520px;letter-spacing:-.8px}.hero .subtitle{font-size:14px;font-weight:750;letter-spacing:.2px;color:#e3e8ff;margin:-3px 0 10px}.hero p{max-width:570px;margin:0;color:#eef0ff;font-size:14px;line-height:1.65}
+.meeting{display:flex;flex-wrap:wrap;gap:9px;margin-top:19px}.meeting span{display:inline-flex;align-items:center;gap:7px;background:#ffffff1c;border:1px solid #ffffff30;border-radius:12px;padding:9px 11px;font-size:12px;font-weight:750}
+.card{margin-top:17px;background:var(--paper);border:1px solid #e9edf6;border-radius:23px;padding:23px;box-shadow:0 12px 34px #283c6a0c}
+.status{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:11px}.status-label{font-size:12px;color:#7b879c;font-weight:800}.counter{font-size:12px;color:#5666c8;font-weight:900}
+.progress{height:7px;border-radius:20px;background:#eef1f8;overflow:hidden}.progress>span{display:block;width:10%;height:100%;border-radius:20px;background:linear-gradient(90deg,#6278ef,#51c3a6);transition:width .25s}
+.question-area{padding:26px 0 18px;min-height:225px}.question-kicker{font-size:11px;text-transform:uppercase;letter-spacing:1.3px;color:#9aa4b7;font-weight:900;margin-bottom:12px}
+.question-text{font-size:clamp(19px,4vw,24px);line-height:1.48;font-weight:800;letter-spacing:-.35px;margin:0 0 21px}.answers{display:grid;gap:10px}
+.answer{width:100%;display:flex;align-items:center;gap:13px;text-align:left;padding:13px 15px;border:1.5px solid #e7ebf4;border-radius:15px;background:#fff;color:#293650;font-size:15px;font-weight:700;cursor:pointer;transition:border .18s,background .18s,transform .18s;min-height:54px}
+.answer:hover{border-color:#aab5f5;background:#fafaff}.answer:active{transform:scale(.99)}.answer.selected{border-color:#6879eb;background:#f1f3ff;box-shadow:0 0 0 3px #6879eb14}
+.letter{width:29px;height:29px;flex:none;display:grid;place-items:center;border-radius:9px;background:#f0f2f8;color:#77839a;font-size:12px;font-weight:900}.answer.selected .letter{background:#6477eb;color:#fff}
+.bottom{padding-top:5px}.dots-title{font-size:11px;color:#98a1b2;text-align:center;font-weight:800;letter-spacing:.6px;margin-bottom:11px}.dots{display:flex;justify-content:center;gap:9px;flex-wrap:wrap}
+.dot{width:11px;height:11px;padding:0;border-radius:50%;border:0;background:#e0e5ef;cursor:pointer;transition:all .2s}.dot.done{background:#54bda3}.dot.active{background:#5d72e9;box-shadow:0 0 0 5px #5d72e91b;transform:scale(1.08)}
+.dot:focus-visible,.answer:focus-visible,button:focus-visible{outline:3px solid #9ba9ff;outline-offset:3px}
+.nav{display:flex;align-items:center;gap:10px;margin-top:21px}.nav button{border:0;border-radius:14px;padding:14px 17px;font-size:14px;font-weight:850;cursor:pointer;transition:.18s}
+.back{background:#f0f2f8;color:#59657b;min-width:112px}.back:disabled{opacity:.4;cursor:not-allowed}.next{flex:1;background:var(--blue);color:#fff;box-shadow:0 7px 16px #536de82b}.next:hover{background:var(--blue-dark)}
+.hint{text-align:center;color:#9aa3b3;font-size:11px;margin:14px 0 0}.result{display:none;text-align:center;padding:35px 24px}.result.show{display:block}
+.result-icon{font-size:55px;margin-bottom:10px}.result h2{font-size:27px;margin:5px 0 12px;letter-spacing:-.6px}.result p{font-size:15px;line-height:1.7;color:#69758b;max-width:500px;margin:0 auto}
+.result .score{display:inline-block;margin:20px 0 2px;padding:10px 15px;border-radius:30px;background:#f0f2ff;color:#5365cf;font-weight:850;font-size:13px}
+.again{margin-top:17px;border:0;border-radius:14px;background:var(--blue);color:#fff;padding:14px 22px;font-size:14px;font-weight:850;cursor:pointer}.footer{text-align:center;color:#a0a8b7;font-size:11px;margin:17px 0 0}
+@media(max-width:520px){body{padding:13px 11px 25px}.hero{padding:23px 20px;border-radius:22px}.card{padding:18px;border-radius:20px}.question-area{min-height:215px;padding-top:23px}.nav button{padding:13px 12px}.back{min-width:94px}.meeting span{font-size:11px}}
+</style>
+</head>
+<body>
+<main class="app">
+ <div class="topline"><div class="brand">Emille Türkçe Konuşma Kulübü</div><div class="clubmark">🇹🇷 Практикуем турецкий</div></div>
+ <header class="hero">
+  <div class="lesson">✦ Урок 2 · Sağlık</div>
+  <h1>Медицина и здоровье</h1>
+  <div class="subtitle">Проверка зрения</div>
+  <p>На этом занятии учимся говорить о самочувствии, описывать симптомы и понимать простые рекомендации врача. Прочитай предложение и выбери подходящий вариант.</p>
+  <div class="meeting"><span>◷ Каждую среду · 19:30</span><span>⌖ Кафе İkonik · Алсанджак</span></div>
+ </header>
+ <section class="card" id="quizCard">
+  <div class="status"><span class="status-label">ТВОЙ ПРОГРЕСС</span><span class="counter" id="counter">ВОПРОС 1 ИЗ 10</span></div>
+  <div class="progress"><span id="progressFill"></span></div>
+  <div class="question-area" aria-live="polite">
+   <div class="question-kicker">Турецкая грамматика · Выбери правильный вариант</div>
+   <h2 class="question-text" id="questionText"></h2><div class="answers" id="answers"></div>
+  </div>
+  <div class="bottom"><div class="dots-title">ПЕРЕХОД К ВОПРОСУ</div><div class="dots" id="dots" aria-label="Навигация по вопросам"></div>
+   <div class="nav"><button class="back" type="button" id="prevBtn">← Назад</button><button class="next" type="button" id="nextBtn">Следующий вопрос →</button></div>
+   <p class="hint">Нажимай на точки, чтобы переходить между вопросами.</p>
+  </div>
+ </section>
+ <section class="card result" id="resultCard" aria-live="polite"><div class="result-icon" id="resultIcon">🎉</div><h2 id="resultTitle">Отлично!</h2><p id="resultMessage"></p><div class="score" id="scoreText"></div><br><button class="again" type="button" id="retryBtn">Пройти тест ещё раз ↻</button></section>
+ <div class="footer">Урок 2 · Emille Türkçe Konuşma Kulübü</div>
+</main>
+<script>
+const questions=[
+ {q:"Son zamanlarda gözlerim iyi ______.",o:["görmüyor","görmedim","görmeyecek"],a:0},
+ {q:"Yaklaşık bir haftadır böyle. Burada “-dır” hangi anlamı verir?",o:["Geçmişte bitmiş bir olay","Bir süredir devam eden durum","Gelecekte olacak olay"],a:1},
+ {q:"Yakındaki yazıları ______ ama uzaktakileri görmekte zorlanıyorum.",o:["okuyabiliyorum","okuyabilirim mi","okuyabildim"],a:0},
+ {q:"Gözleriniz ağrıyor ______?",o:["mu","mı","mi"],a:1},
+ {q:"Her gün birkaç saat bilgisayar ve telefon ______.",o:["kullanıyorum","kullanırsın","kullanacak"],a:0},
+ {q:"Annem gözlük ______.",o:["kullanıyor","kullanıyorsun","kullanıyoruz"],a:0},
+ {q:"Lütfen şu harflere ______.",o:["bakın","bakıyorsunuz","baktınız"],a:0},
+ {q:"Diğer gözünüzü ______ ve tekrar deneyin.",o:["kapatın","kapatıyorsunuz","kapattınız"],a:0},
+ {q:"Bilgisayar kullanırken düzenli olarak mola ______ öneriyorum.",o:["vermenizi","veriyorsunuz","verdiniz"],a:0},
+ {q:"Ekrana çok yakından ______.",o:["bakmayın","bakmıyorsunuz","bakmadınız"],a:0}
+];
+let current=0;const chosen=Array(questions.length).fill(null);
+const questionText=document.getElementById('questionText'),answersEl=document.getElementById('answers'),dotsEl=document.getElementById('dots');
+const counter=document.getElementById('counter'),progressFill=document.getElementById('progressFill');
+const prevBtn=document.getElementById('prevBtn'),nextBtn=document.getElementById('nextBtn');
+const quizCard=document.getElementById('quizCard'),resultCard=document.getElementById('resultCard');
+function renderDots(){dotsEl.innerHTML='';questions.forEach((_,i)=>{const d=document.createElement('button');d.type='button';d.className='dot'+(chosen[i]!==null?' done':'')+(i===current?' active':'');d.setAttribute('aria-label',`Вопрос ${i+1}`);d.setAttribute('aria-current',i===current?'step':'false');d.addEventListener('click',()=>{current=i;renderQuestion()});dotsEl.appendChild(d)})}
+function renderQuestion(){
+ const item=questions[current];counter.textContent=`ВОПРОС ${current+1} ИЗ ${questions.length}`;progressFill.style.width=`${(current+1)/questions.length*100}%`;questionText.textContent=item.q;answersEl.innerHTML='';
+ item.o.forEach((option,i)=>{const b=document.createElement('button');b.type='button';b.className='answer'+(chosen[current]===i?' selected':'');const l=document.createElement('span');l.className='letter';l.textContent=String.fromCharCode(65+i);const t=document.createElement('span');t.textContent=option;b.append(l,t);b.setAttribute('aria-pressed',chosen[current]===i?'true':'false');b.addEventListener('click',()=>{chosen[current]=i;renderQuestion()});answersEl.appendChild(b)});
+ prevBtn.disabled=current===0;nextBtn.textContent=current===questions.length-1?'Завершить тест ✓':'Следующий вопрос →';renderDots();
+}
+function finish(){
+ const missing=chosen.findIndex(v=>v===null);if(missing!==-1){current=missing;renderQuestion();return}
+ const wrong=chosen.reduce((s,v,i)=>s+(v===questions[i].a?0:1),0);let icon,title,message;
+ if(wrong<=1){icon='🏆';title='Превосходно!';message='Отличная работа! Ты прекрасно справился(ась). Так держать!'}
+ else if(wrong===2){icon='👏';title='Браво!';message='Браво! Отличная работа! Так держать!'}
+ else if(wrong===3){icon='🙂';title='Ты молодец!';message='Ты молодец, но есть ещё над чем поработать. Продолжай учиться!'}
+ else if(wrong===4){icon='💪';title='Попробуй ещё раз!';message='Тебе нужно ещё немного поработать над этой темой. Попробуй ещё раз!'}
+ else{icon='❤️';title='Не расстраивайся!';message='Не расстраивайся! Попробуй ещё раз ответить на вопросы. У тебя обязательно получится!'}
+ document.getElementById('resultIcon').textContent=icon;document.getElementById('resultTitle').textContent=title;document.getElementById('resultMessage').textContent=message;document.getElementById('scoreText').textContent=`Ошибок: ${wrong} из ${questions.length}`;
+ quizCard.style.display='none';resultCard.classList.add('show');window.scrollTo({top:0,behavior:'smooth'});
+}
+nextBtn.addEventListener('click',()=>{if(current<questions.length-1){current++;renderQuestion()}else finish()});prevBtn.addEventListener('click',()=>{if(current>0){current--;renderQuestion()}});
+document.getElementById('retryBtn').addEventListener('click',()=>{current=0;chosen.fill(null);resultCard.classList.remove('show');quizCard.style.display='block';renderQuestion();window.scrollTo({top:0,behavior:'smooth'})});
+renderQuestion();
+</script>
+</body>
+</html>
